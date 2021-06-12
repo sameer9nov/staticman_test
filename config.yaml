@@ -39,7 +39,7 @@ Taxonomies:
 # https://bulkitv2.cssninja.io/_components-icons-fa.html
 
 
-staticman: https://techprimer.herokuapp.com/v2/entry/sameer9nov/blog.github.io/main
+staticman: https://techprimer.herokuapp.com/v2/entry/sameer9nov/staticman_test/master
 
 params:
   # parameter used to specify the number of article in each row 
