@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><link rel="icon" href="../../favicon_main.svg"><meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" /><meta property="og:url"  content="https://techprimer.netlify.app/blogs/blockchain-primer/" />
+    <meta property="og:type" content="article" /><meta property="og:title" content="BlockChain; A Theoretical Primer..!" /><meta property="og:description" content="A non-technical introduction to BlockChain" /><meta property="og:image:width"  content="375" />
+        <meta property="og:image:height" content="250" /><meta property="og:image" content="https://techprimer.netlify.app/blogs/blockchain-primer/Blockchain_hu6b9f7f36f04ac1575651bea689d10bd2_1951609_600x0_resize_q75_box.jpg" /><title>TechPrimer Blogs - BlockChain; A Theoretical Primer..!</title>
+
+    
+<link href="https://fonts.googleapis.com/css?family=Open&#43;Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open&#43;Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open&#43;Sans" rel="stylesheet"><link rel="stylesheet" type="text/css" href="../../css/style.css">
+<link rel="stylesheet" type="text/css" href="../../css/monokai-sublime.9.15.8.min.css">
+<link rel="stylesheet" type="text/css" href="../../css/all.min.css">
+<link rel="stylesheet" type="text/css" href="../../css/refresh.css">
+<link rel="stylesheet" type="text/css" href="../../css/devicon.min.css">
+    
+
+  </head>
+  <body>
+     
+
+    <div id="preloader">
+      <div id="status"></div>
+    </div><nav class="navbar is-fresh is-transparent no-shadow" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+
+      
+      
+      
+      <a class="navbar-item">
+        <div class="menu-icon-wrapper left-menu-icon-wrapper" style="visibility: visible;">
+          <svg width="1000px" height="1000px">
+            <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+            <path class="path2" d="M 300 500 L 700 500"></path>
+            <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+          </svg>
+          <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+        </div>
+        <div class="navbar-item left-menu-icon-wrapper">
+          Tags
+        </div>
+      </a>
+
+      <div class="navbar-item is-expanded"></div>
+      <a class="navbar-item is-hidden-desktop">  
+        <div data-target="navbar-menu" class="navbar-item right-menu-icon-wrapper is-hidden-desktop">
+          Menu
+        </div>
+        <div data-target="navbar-menu" class="menu-icon-wrapper right-menu-icon-wrapper" style="visibility: visible;">
+          <svg width="1000px" height="1000px">
+            <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+            <path class="path2" d="M 300 500 L 700 500"></path>
+            <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+          </svg>
+          <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+        </div>
+      </a>
+    </div><div id="navbar-menu" class="navbar-menu is-static">
+      
+      <div class="navbar-end">
+        
+          <a href="../../" class="navbar-item is-secondary">Home</a><a href="../../about/" class="navbar-item is-secondary">Intro</a><a href="../../blogs/" class="navbar-item is-secondary">Blogs</a>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="views">
+    <span class="views">
+        <img src="https://visitor-badge.glitch.me/badge?page_id=https%3a%2f%2ftechprimer.netlify.app%2fblogs%2fblockchain-primer%2f" style="position:relative; border:none;"alt="Visitor Badge"/>
+    </span>
+</div><nav id="navbar-clone" class="navbar is-fresh is-transparent" role="navigation" aria-label="main navigation">
+  <div class="container">
+      <div class="navbar-brand">
+  
+        
+        
+        
+        <a class="navbar-item">
+          <div class="menu-icon-wrapper left-menu-icon-wrapper" style="visibility: visible;">
+            <svg width="1000px" height="1000px">
+              <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+              <path class="path2" d="M 300 500 L 700 500"></path>
+              <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+            </svg>
+            <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+          </div>
+          <div class="navbar-item left-menu-icon-wrapper">
+            Tags
+          </div>
+        </a>
+  
+        <div class="navbar-item is-expanded"></div>
+        <a class="navbar-item is-hidden-desktop">  
+          <div data-target="cloned-navbar-menu" class="navbar-item right-menu-icon-wrapper is-hidden-desktop">
+            Menu
+          </div>
+          <div data-target="cloned-navbar-menu" class="menu-icon-wrapper right-menu-icon-wrapper" style="visibility: visible;">
+            <svg width="1000px" height="1000px">
+              <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+              <path class="path2" d="M 300 500 L 700 500"></path>
+              <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+            </svg>
+            <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+          </div>
+        </a>
+      </div><div id="cloned-navbar-menu" class="navbar-menu is-static">
+        <div class="navbar-end"><a href="../../" class="navbar-item is-secondary">Home</a><a href="../../about/" class="navbar-item is-secondary">Intro</a><a href="../../blogs/" class="navbar-item is-secondary">Blogs</a>
+          
+          
+          
+
+          
+          
+          
+        
+        </div>
+      </div>
+    </div>
+  </nav>
+<section class="section is-medium">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-centered-tablet-portrait">
+        <h1 class="title is-2 section-title">BlockChain; A Theoretical Primer..!</h1>
+        <h5 class="subtitle is-5 is-muted"></h5>
+        <div class="divider"></div>
+        
+        <section class="section content has-text-justified">
+          <p>For millennia, people have tried to maintain and track information using a Ledger: a very basic,
+simple sequential/chronological collection of data. Their usefulness ranged from recording the
+number of sacks of barley to barrels of whiskey, from tracking the runs in a cricket match to the bets
+on it, from counting all the ghosts in the villages to counting the friendly ones amongst them. It was,
+and still is, about ledgers.</p>
+<p>With time, human activity has changed, diversified, expanded and the activities have only been ever
+increasing. What has evolved alongside, are also the methods that we use for recording and
+synchronizing information. Information started becoming digital in the last century and our ledgers
+harmoniously transitioned from paper sheets to computers. What did not change however, was that
+these ledgers could only be updated by a central authority. This concentration of power implied that
+if the trusted authority was to go rogue, there would be nothing preventing that. So there’s nothing
+but trust, to trust. This has unfortunately become more prevalent in the post internet era and we
+can cite examples for it. What if my bank decided to stop paying me interest on my savings account?
+They can do it. What if Facebook decided to change my profile picture to that of a leprechaun? They
+can do it too.</p>
+<p>Since the advent of the internet our worlds are more connected. In this age of digital interactions,
+we have yearned for something more collaborative and more resilient. This system would need to
+work at scale and not be aligned to any motive, incentive or ideology. There was a need for a trust
+less system. To avoid any misinterpretations, when I say ‘trust less’, I mean a system that is
+independent of the trust factor. It does not mean a system that cannot be trusted.
+Circa 2009 and Blockchain was invented to precisely solve for this asymmetry of trust. It is a
+mechanism that eliminates the concept of basing our trust on a central authority. It allows unlinked
+entities, who might all have vested interests in altering their shared information, to agree upon a
+single dataset and hence it is a way to come up with a consensus involving multiple parties. In the
+realm of Computer Science, this problem (that Blockchain is built to solve for) is referred to as the
+Byzantine General’s problem and the gist of which is as below.</p>
+<p>Consider we have four generals hatching a plan to lay siege on a city. The only way they can
+communicate with each other is via a messenger. For the plan to succeed, three of them need to
+attack at the same time and they do not know if one of these four is unreliable. This unreliable
+general can modify the attack message and cause the attack to fail. One way to overcome this would
+be to supply a history of all the messages that were sent with a proof that they are unaltered. If the
+generals see that one of their peers has sent a message that differs from theirs, they would identify
+him as a traitor. If 3 of the 4 generals here are good, the correct message will be obvious. A more
+detailed and illustrious version of the problem can be found <a href="https://coincentral.com/byzantine-generals-problem/">here</a>.</p>
+<p>Let us try to understand this problem with a real life example as well. Let’s say, I am trying to sell my
+collection of stamps online and find a potential buyer. However, I do not know if this buyer is legit
+and if he really has the means to buy my collection. Similar to the Byzantine Generals example, we
+can never be sure that the buyer indeed has enough funds to buy the stamps. As it stand today, I
+need to depend upon a trusted middle-man like PayPal to bridge this trust deficit. Once PayPal
+credits the funds to me, I can deliver my collection of stamps to the buyer. However, the services of
+this middleman -PayPal- come at a cost and take time. With Blockchain, the need for this middleman
+is eliminated, thereby saving time and cost.</p>
+<p>Now that we have an overview of Blockchain, let’s have a look how this works in real life.
+Number of computers (nodes), that want to share data, are joined into a network and they are all
+running a Blockchain software. As data enters the network, it is grouped together in ‘blocks’ for
+verification. In this process, all the computers on the network vote on the block of data, saying, in
+effect, ‘all seems good to me’ (or not). A block rejection leads to a re-voting when the next block is
+submitted. Alternatively, if the current block is verified successfully, it gets added to the entire past
+record of validated data blocks and a connected ‘chain of blocks’ is formed. This chain is stored on all
+the participating computers in the network. In a rare event, if you were tempted to cheat, and alter
+a past transaction, you would need to somehow do that across all the computers in the system or
+join the system with sufficient new computers to vote your cheats into ‘fact’. This is also sometimes
+referred to as the 51% attack. As it stands today, such attacks are rare, as it would require
+computing power superseding that of millions of computers in the world (all of which are part of a
+network).</p>
+<p>As is evident, there’s a tonne of technical detail that is involved in making a Blockchain function.
+The <a href="https://bitcoin.org/bitcoin.pdf">original white paper</a> describing the design of the first blockhain based system is a highly
+recommended read.</p>
+
+        </section>
+      </div>
+    </div>
+  </div>  
+  </section>
+
+  
+  
+  
+
+  <section class="social-share">
+    <ul class="share-icons">
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?hashtags=codingnconcepts&amp;url=https%3a%2f%2ftechprimer.netlify.app%2fblogs%2fblockchain-primer%2f&amp;text=BlockChain%3b%20A%20Theoretical%20Primer..%21" target="_blank" rel="noopener" aria-label="Share on Twitter" class="share-btn twitter">
+          <svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+          <p>Twitter</p>
+          </a>
+      </li>
+      
+
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ftechprimer.netlify.app%2fblogs%2fblockchain-primer%2f" target="_blank" rel="noopener" aria-label="Share on Facebook" class="share-btn facebook" alt="facebook">
+          <svg class="widget-social__link-icon icon icon-facebook" width="24" height="24" viewBox="0 0 352 352"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+          <p>Facebook</p>
+          </a>
+      </li>
+      
+
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ftechprimer.netlify.app%2fblogs%2fblockchain-primer%2f&amp;source=https%3a%2f%2ftechprimer.netlify.app%2fblogs%2fblockchain-primer%2f&amp;title=BlockChain%3b%20A%20Theoretical%20Primer..%21&amp;summary=BlockChain%3b%20A%20Theoretical%20Primer..%21" target="_blank" rel="noopener" aria-label="Share on LinkedIn" class="share-btn linkedin">
+          <svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+            <p>LinkedIn</p>
+          </a>
+      </li>
+      
+
+      
+      
+
+      
+      
+      <li>
+        <a href="mailto:?subject=TechPrimer%20Blogs - BlockChain%3b%20A%20Theoretical%20Primer..%21.&amp;body=BlockChain%3b%20A%20Theoretical%20Primer..%21%2c%20by%20TechPrimer%20Blogs%0a%3cnil%3e%0a%0ahttps%3a%2f%2ftechprimer.netlify.app%2fblogs%2fblockchain-primer%2f%0a" target="_blank" class="share-btn email">
+          <svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+          <p>Email</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <footer class="footer footer-dark">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <img src="../../footer.svg" alt="">
+        
+      </div>
+      
+    <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+              <h3>Website</h3>
+          </div>
+          <ul class="link-list"><li>
+              <a href="../../"><span class="icon"><i class="fa fa-home"></i></span> Home</a>
+            </li><li><a href="../../credits/">
+                  <span class="icon"><i class="fa fa-cube"></i></span>
+                  Credits
+                </a></li>
+            <li><a href="../../tags/">
+                <span class="icon"><i class="fa fa-tag"></i></span> 
+                All Tags
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    
+      
+      <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+              <h3>Contacts</h3>
+          </div>
+          <ul class="link-list">
+            
+            <li>
+              <a href="https://www.linkedin.com/in/sameer-yadav-a67975107" target="_blank">
+                <span class="icon"><i class="fab fa-linkedin"></i></span>
+                
+                  My LinkedIn
+                
+              </a>
+            </li>
+            
+            
+            <li>
+              <a href="https://github.com/sameer9nov" target="_blank">
+                <span class="icon"><i class="fab fa-github-square"></i></span>
+                
+                  Github
+                
+              </a>
+            </li>
+                         
+            
+            <li>
+              <a href="mailto:sameer9nov@gmail.com" target="_blank">
+                <span class="icon"><i class="fa fa-envelope"></i></span>
+                
+                  My Email
+                
+              </a>
+            </li>
+            
+                   
+                   
+            
+                   
+          </ul>
+        </div>
+      </div>
+      
+
+      
+      <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+              <h3>Copyright</h3>
+          </div>
+          <ul class="link-list">
+            <li>
+              <a>
+                <span class="icon"><i class="fa fa-copyright"></i></span>
+                Sameer - 2021
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+</footer>
+    <div id="backtotop"><a href="#"></a></div><div class="sidebar scroll">
+  <div class="sidebar-header"><img src="../../sidebar.svg" alt="">
+    
+    <a class="sidebar-close" href="javascript:void(0);">
+      <i data-feather="x"></i>
+    </a>
+  </div>
+  <div class="inner">
+    <ul class="sidebar-menu">
+      <li class="no-children"><a href="../../tags/"><div class="columns">
+              <table width="100%">  
+                <tr>
+                  <td class="">
+                    <span class="icon"><i class="fa fa-cubes"></i></span>
+                    All Tags
+                  </td>
+                  <td class="has-text-right" >
+                      
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </a>
+      <li class="no-children">
+          <a href="../../tags/custom_image">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>custom_image</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">2</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="../../tags/custom_summary">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>custom_summary</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">2</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li></ul>
+  </div>
+</div>
+<script src="../../js/jquery-2.2.4.js"></script>
+  <script src="../../js/feather.4.22.0.js"></script>
+  <script src="../../js/modernizr-3.6.0.js"></script>
+  <script src="../../js/refresh.js"></script><script>
+  window.MathJax = {
+    loader: {
+      load: ['core', 'input/tex-base', 'output/chtml'],  
+      source: {
+        'core': '\/js\/mathjax\/core.js',
+        'input/tex-base': '\/js\/mathjax\/tex-base.js',
+        'output/chtml': '\/js\/mathjax\/chtml.js',
+        'output/chtml/fonts/tex': '\/js\/mathjax\/tex_out.js'
+      },
+    },
+    chtml: {
+      fontURL: '/fonts' 
+    },
+  };
+</script><script src="../../js/mathjax/startup.js"></script>
+  <script src="../../js/highlight.9.18.1.js"></script>
+  <script src="../../js/highlightjs-line-numbers.2.7.0.min.js"></script><script>
+  hljs.initHighlightingOnLoad();
+  hljs.initLineNumbersOnLoad();
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('.codeinline').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+</body>
+</html>
