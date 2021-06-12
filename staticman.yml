@@ -7,7 +7,11 @@ comments:
   #
   # Names of the fields the form is allowed to submit. If a field that is
   # not here is part of the request, an error will be thrown.
-  allowedFields: ["name", "email", "url", "message", "replying_to_uid"]
+  allowedFields: ["name", "email", "body", "reply_to"]
+
+  # When allowedOrigins is defined, only requests sent from one of the domains
+  # listed will be accepted.
+  #allowedOrigins: ["example.com"] # TODO: Add your domains
 
   # (*) REQUIRED
   #
@@ -16,16 +20,7 @@ comments:
   branch: "master"
 
   # Text to use as the commit message or pull request title. Accepts placeholders.
-  commitMessage: "Comment from {fields.name} on {options.slug}"
-
-  # (*) REQUIRED
-  #
-  # Destination path (filename) for the data files. Accepts placeholders.
-  filename: "entry{@timestamp}"
-
-  # The format of the generated data files. Accepted values are "json", "yaml"
-  # or "frontmatter"
-  format: "yaml"
+  commitMessage: "Add new comment in {options.section}/{options.slug}"
 
   # List of fields to be populated automatically by Staticman and included in
   # the data file. Keys are the name of the field. The value can be an object
@@ -34,8 +29,10 @@ comments:
   generatedFields:
     date:
       type: date
-      options:
-        format: "timestamp-seconds"
+
+  # The format of the generated data files. Accepted values are "json", "yaml"
+  # or "frontmatter"
+  format: "yaml"
 
   # Whether entries need to be appproved before they are published to the main
   # branch. If set to `true`, a pull request will be created for your approval.
@@ -43,7 +40,21 @@ comments:
   moderation: true
 
   # Name of the site. Used in notification emails.
-  name: "TechPrimer Blog"
+  name: "https://techprimer.netlify.app/" # TODO: Change this to match your site
+
+  # (*) REQUIRED
+  #
+  # Destination path (directory) for the data files. Accepts placeholders.
+  path: "data/comments/{options.section}/{options.slug}"
+
+  # (*) REQUIRED
+  #
+  # Destination path (filename) for the data files. Accepts placeholders.
+  filename: "comment-{@timestamp}"
+
+  # Names of required files. If any of these isn't in the request or is empty,
+  # an error will be thrown.
+  requiredFields: ["name", "body"]
 
   # Notification settings. When enabled, users can choose to receive notifications
   # via email when someone adds a reply or a new comment. This requires an account
@@ -61,15 +72,6 @@ comments:
     #
     # Mailgun domain (encrypted)
     #domain: "4r3e2w1q"
-
-  # (*) REQUIRED
-  #
-  # Destination path (directory) for the data files. Accepts placeholders.
-  path: "data/comments/{options.slug}"
-
-  # Names of required fields. If any of these isn't in the request or is empty,
-  # an error will be thrown.
-  requiredFields: ["name", "email", "message"]
 
   # List of transformations to apply to any of the fields supplied. Keys are
   # the name of the field and values are possible transformation types.

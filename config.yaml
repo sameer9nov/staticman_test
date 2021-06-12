@@ -46,7 +46,13 @@ params:
   # for the summary pages, the possible options are: 2, 3, 4, 5 or 6
   articlesPerRow: 3 
   
-  staticman: https://techprimer.herokuapp.com/v2/entry/sameer9nov/staticman_test/master
+  #staticman: https://techprimer.herokuapp.com/v2/entry/sameer9nov/staticman_test/master
+  
+  staticman:
+    username: "sameer9nov"
+    repository: "staticman_test"
+    branch: "master"
+    notifications: false
 
   # option to specify the favicon image of the site
   # the path is relative to the folder "assetDir" of this configuration

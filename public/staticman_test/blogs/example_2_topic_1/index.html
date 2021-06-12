@@ -141,43 +141,55 @@
     </div>
   </div>  
   </section>
+<div id="comment-submitted" class="dialog">
+  <h3>Thank you</h3>
+  <p>Your comment has been submitted and will be published once it has been approved.</p>
+  
+</div>
 
-    <section id="comments">
-        
-        <h3 class="title"><a href="#comments">&#9997; Comments</a></h3>
-        <section class="staticman-comments post-comments">
-            
-            
-            
+<div id="comment-error" class="dialog">
+  <h3>OOPS!</h3>
+  <p>Your comment has not been submitted. Please <a href="https://techprimer.netlify.app/blogs/example_2_topic_1/">go back</a> and try again. Thank You!</p>
+  <p>If this error persists, please open an issue by <a href="https://github.com/sameer9nov/staticman_test/issues"> clicking here</a>.</p>
+</div>
+
+<div id="comment-form">
+  <h1 id="comment-form-header">Say something</h1>
+  <form method="POST" action="https://dev.staticman.net/v3/entry/github/sameer9nov/staticman_test/master/comments">
+    <input type="hidden" name="options[redirect]" value="https://techprimer.netlify.app/blogs/example_2_topic_1/#comment-submitted">
+    <input type="hidden" name="options[redirectError]" value="https://techprimer.netlify.app/blogs/example_2_topic_1/#comment-error">
+    <input type="hidden" name="options[slug]" value="example_2_topic_1">
+    <input type="hidden" name="options[section]" value="Blogs">
+    <input type="hidden" name="options[origin]" value="https://techprimer.netlify.app/blogs/example_2_topic_1/">
+    <input type="hidden" name="options[parent]" value="example_2_topic_1">
+    <input type="hidden" name="fields[reply_to]" value="">
+    <input type="address" name="fields[botpot]" placeholder="botpot (do not fill!)" style="display:none">
     
-            
-            
-    
 
-        <form id="comment-form" class="post-new-comment" method="post" action="https://techprimer.herokuapp.com/v2/entry/sameer9nov/staticman_test/master">
-            
-                <p>Be the first to leave a comment! 🎉</p>
-            
-            <h3 class="prompt">Say something</h3>
-            <input type="hidden" name="options[redirect]" value="https://techprimer.netlify.app/blogs/example_2_topic_1/#comment-submitted">
-            <input type="hidden" name="options[slug]" value="example_2_topic_1">
-            <input type="text" name="fields[name]" class="post-comment-field" placeholder="Name *" required/>
-            <input type="email" name="fields[email]" class="post-comment-field" placeholder="Email address (will not be public) *" required/>
-            <input type="hidden" id="comment-parent" name="fields[reply_to]" value="">
-            <textarea name="fields[comment]" class="post-comment-field" placeholder="Comment (markdown is accepted) *" required rows="10"></textarea>
-            <input type="submit" class="post-comment-field btn btn-primary comment-buttons" value="Submit">
-        </form>
-    </section>
+    <fieldset>
+      <input name="fields[name]" type="text" placeholder="Your name">
+    </fieldset>
 
-    <div id="comment-submitted" class="dialog">
-        <h3>Thank you!</h3>
-        <p>Your comment has been submitted and will be published once it has been approved. &#128522;</p>
+    <fieldset>
+      <input name="fields[email]" type="email" placeholder="Your email address">
+    </fieldset>
 
-        <p><a href="#" class="btn btn-primary comment-buttons ok">OK</a></p>
-    </div>
+    <fieldset>
+      <textarea name="fields[body]" placeholder="You can use Markdown syntax" rows="10"></textarea>
+    </fieldset>
 
     
-</section>
+
+    <fieldset>
+      
+
+      <input type="submit" value="Submit" id="submit-button" class="right">
+      <input type="reset" value="Reset" class="right">
+    </fieldset>
+
+  </form>
+</div>
+
 <footer class="footer footer-dark">
   <div class="container">
     <div class="columns">
